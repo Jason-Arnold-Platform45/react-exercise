@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useGoogleSSO } from "./SSO";
 import "../assets/LoginForm.css"
 
 export const Login = () => {
     const navigate = useNavigate();
+    const loginWithGoogle = useGoogleSSO();
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [showPassword, setShowPassword] = useState(false);
@@ -72,7 +74,7 @@ export const Login = () => {
                                 />
                             </div>
                             <button type="submit" className="login-btn">Login</button>
-                            <button type="button" className="google-btn">Login with Google</button>
+                            <button type="button" className="google-btn" onClick={() => loginWithGoogle()}>Login with Google</button>
                         </form>
                     </div>
                     <div className="login-signup">
