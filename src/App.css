@@ -43,7 +43,7 @@
     border-radius: 50px;
     /* padding: 20px; */
     object-fit: contain;
-    box-shadow: 2px 2px 2px #333;
+    box-shadow: 1px 4px 1px lightgray;
 }
 
 .button {

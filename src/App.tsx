@@ -1,5 +1,6 @@
-import { BrowserRouter, Routes, Route,NavLink } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, NavLink, useLocation } from 'react-router-dom'
 import { Navbar } from './Components/navbar'
+import { Login } from './Components/LoginForm'
 import './App.css'
 
 function Home() {
@@ -22,18 +23,29 @@ function Home() {
   )
 }
 
-function App() {
+function AppContent() {
+  const location = useLocation();
+  const hideNavbar = location.pathname === '/' || location.pathname === '/signup';
+
   return (
-    <BrowserRouter>
-      <Navbar />
+    <>
+      {!hideNavbar && <Navbar />}
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Login />} />
+        <Route path="/home" element={<Home />} />
         <Route path="/label" element={<div>Label Page</div>} />
         <Route path="/label2" element={<div>Label 2 Page</div>} />
-        <Route path="/login" element={<div>Login Page</div>} />
         <Route path="/signup" element={<div>Sign Up Page</div>} />
         <Route path='/start_your_free_trial' element={<div>Start your Free Trial</div>} />
       </Routes>
+    </>
+  )
+}
+
+function App() {
+  return (
+    <BrowserRouter>
+      <AppContent />
     </BrowserRouter>
   )
 }

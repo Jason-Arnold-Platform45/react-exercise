@@ -10,13 +10,13 @@ export const Navbar = () => {
             </div>
             <div className="nav-bar">
                 <ul>
-                    <li><NavLink to="/" end>Home</NavLink></li>
+                    <li><NavLink to="/home" end>Home</NavLink></li>
                     <li><NavLink to="/label">Label</NavLink></li>
                     <li><NavLink to="/label2">Label</NavLink></li>
                 </ul>
             </div>
             <div className="buttons">
-                <Link to="/login"><button>Login</button></Link>
+                <Link to="/"><button>Login</button></Link>
                 <Link to="/signup"><button className="signup">Sign up</button></Link>
             </div>
         </div>
