@@ -1,6 +1,8 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { useGoogleSSO } from "./SSO";
+import { LoginButton } from "./LoginButton";
+import { LoginWithGoogleButton } from "./LoginWithGoogleButton";
 import "../assets/LoginForm.css"
 
 export const Login = () => {
@@ -8,7 +10,7 @@ export const Login = () => {
     const loginWithGoogle = useGoogleSSO();
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    const [showPassword, setShowPassword] = useState(false);
+    const [showPassword] = useState(false);
     const [error, setError] = useState("");
 
     const handleLogin = (e: React.FormEvent) => {
@@ -61,7 +63,7 @@ export const Login = () => {
                             <div className="login-form-group">
                                 <div className="password-label">
                                     <label htmlFor="password">Password</label>
-                                    <a href="#" className="forgot-password">Forgot your password?</a>
+                                    <Link to="/forgot-password" className="forgot-password">Forgot your password?</Link>
                                 </div>
                                 <input
                                     type={showPassword ? "text" : "password"}
@@ -73,14 +75,14 @@ export const Login = () => {
                                     onChange={(e) => setPassword(e.target.value)}
                                 />
                             </div>
-                            <button type="submit" className="login-btn">Login</button>
-                            <button type="button" className="google-btn" onClick={() => loginWithGoogle()}>Login with Google</button>
+                            <LoginButton />
+                            <LoginWithGoogleButton loginWithGoogle={loginWithGoogle} />
                         </form>
                     </div>
                     <div className="login-signup">
                         <p>
                             Don&apos;t have an account?{" "}
-                            <a onClick={() => navigate("/signup")}>Sign up</a>
+                            <Link to="/signup">Sign up</Link>
                         </p>
                     </div>
                 </div>

@@ -16,8 +16,8 @@ export const Navbar = () => {
                 </ul>
             </div>
             <div className="buttons">
-                <Link to="/"><button>Login</button></Link>
-                <Link to="/signup"><button className="signup">Sign up</button></Link>
+                <Link to="/" className="login">Login</Link>
+                <Link to="/signup"className="signup">Sign up</Link>
             </div>
         </div>
     )

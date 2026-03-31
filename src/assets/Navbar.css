@@ -46,16 +46,23 @@
     gap: 12px;
 }
 
-.buttons button {
+.buttons .login {
     padding: 8px 20px;
     border-radius: 20px;
     border: 1px solid #333;
+    text-decoration: none;
     cursor: pointer;
     font-size: 14px;
     background-color: transparent;
 }
 
-.buttons button.signup {
+.buttons .signup {
+    padding: 8px 20px;
     background-color: #d4f542;
-    border: 1px solid #d4f542;
+    border: none;
+    text-decoration: none;
+    border-radius: 20px;
+    font-size: 14px;
+    color: #1a2e35;
+    cursor: pointer;
 }

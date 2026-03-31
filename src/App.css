@@ -26,10 +26,11 @@
     margin: 0 0 32px 0;
 }
 
-.left-content button {
+.button-style {
     padding: 14px 28px;
     background-color: #d4f542;
     border: none;
+    text-decoration: none;
     border-radius: 24px;
     font-size: 15px;
     font-weight: 600;

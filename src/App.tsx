@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, NavLink, useLocation } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, Link, useLocation } from 'react-router-dom'
 import { GoogleOAuthProvider } from '@react-oauth/google'
 import { Navbar } from './Components/navbar'
 import { Login } from './Components/LoginForm'
@@ -15,7 +15,7 @@ function Home() {
           packages bring a touch of sparkle to every<br />
           corner of Mzansi.
         </p>
-        <NavLink to="/start_your_free_trial" end><button className='button'>Start your free trial</button></NavLink>
+        <Link to="/start_your_free_trial" className='button-style'>Start your free trial</Link>
       </div>
       <div className="right-content">
         <img src="/image.png" alt="Cleaning product mascot" />
